@@ -97,13 +97,8 @@ Hướng dẫn này sẽ giúp triển khai mô hình phân loại spam bằng P
      pickle.dump(vectorizer, open('vectorizer.pkl', 'wb'))
      ```
 
-2. **Tạo file dữ liệu mẫu**:
-   - Tạo một file CSV có tên `spam.csv` với nội dung ví dụ sau:
-     ```csv
-     text,label
-     "Congratulations, you've won a free ticket!",spam
-     "Hey, can we reschedule our meeting?",not spam
-     ```
+2. **Sử dụng data dữ liệu **:
+   - Tải từ Kaggle file có tên "spam_email.csv"
 
 3. **Chạy script huấn luyện**:
    - Chạy script `train_model.py` để huấn luyện mô hình và lưu trữ:
