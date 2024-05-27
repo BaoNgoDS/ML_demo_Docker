@@ -53,33 +53,8 @@ Hướng dẫn này sẽ giúp triển khai mô hình phân loại spam bằng P
 
 1. **Tạo file app.py**:
    - Trong thư mục `spam_classifier_demo`, tạo một file có tên `app.py` và mở nó bằng trình soạn thảo văn bản.
-   - Thêm nội dung sau vào `app.py`:
-     ```python
-     from flask import Flask, request, render_template
-     import pickle
-
-     app = Flask(__name__)
-
-     # Tải mô hình và vectorizer đã huấn luyện
-     model = pickle.load(open('model.pkl', 'rb'))
-     vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
-
-     @app.route('/')
-     def home():
-         return render_template('index.html')
-
-     @app.route('/predict', methods=['POST'])
-     def predict():
-         if request.method == 'POST':
-             message = request.form['message']
-             data = [message]
-             vect = vectorizer.transform(data).toarray()
-             prediction = model.predict(vect)
-             return render_template('index.html', prediction=prediction[0])
-
-     if __name__ == '__main__':
-         app.run(host='0.0.0.0', port=5000)
-     ```
+   - Thêm nội dung sau vào `app.py`
+   
 
 ### Bước 5: Tạo giao diện người dùng
 
@@ -91,29 +66,8 @@ Hướng dẫn này sẽ giúp triển khai mô hình phân loại spam bằng P
 
 2. **Tạo file index.html**:
    - Trong thư mục `templates`, tạo một file có tên `index.html` và mở nó bằng trình soạn thảo văn bản.
-   - Thêm nội dung sau vào `index.html`:
-     ```html
-     <!DOCTYPE html>
-     <html lang="en">
-     <head>
-         <meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <title>Spam Classifier</title>
-     </head>
-     <body>
-         <h1>Spam Classifier</h1>
-         <form action="/predict" method="post">
-             <label for="message">Enter a message:</label><br><br>
-             <textarea name="message" id="message" rows="4" cols="50"></textarea><br><br>
-             <input type="submit" value="Predict">
-         </form>
-         {% if prediction %}
-             <h2>Prediction: {{ prediction }}</h2>
-         {% endif %}
-     </body>
-     </html>
-     ```
-
+   - Thêm nội dung sau vào `index.html`
+     
 ### Bước 6: Huấn luyện mô hình và lưu trữ
 
 1. **Tạo script huấn luyện mô hình**:
