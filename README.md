@@ -2,7 +2,7 @@
 
 ## Mô hình phân loại Spam bằng Python trên Docker
 
-Hướng dẫn này sẽ giúp bạn triển khai mô hình phân loại spam bằng Python trên Docker. Chúng ta sẽ bắt đầu từ bước đầu tiên và đi qua từng bước chi tiết.
+Hướng dẫn này sẽ giúp triển khai mô hình phân loại spam bằng Python trên Docker.
 
 ### Bước 1: Chuẩn bị Môi trường và Cài đặt Yêu cầu
 
