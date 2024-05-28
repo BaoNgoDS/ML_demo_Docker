@@ -23,7 +23,7 @@ def predict():
         keyword_indices = vect[0].nonzero()[0]
         keywords = [feature_names[i] for i in keyword_indices]
 
-        result_text = "Đây là spam" if prediction == 'spam' else "Đây không phải là spam"
+        result_text = "Đây là spam" if prediction == 1 else "Đây không phải là spam"
 
         return render_template('index.html', prediction=result_text, keywords=keywords, original_message=message)
 
